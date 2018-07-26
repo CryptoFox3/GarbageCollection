@@ -53,8 +53,6 @@ namespace GarbageCollection.Models
         [EmailAddress]
         public string Email { get; set; }
 
-        
-
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
@@ -86,6 +84,10 @@ namespace GarbageCollection.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "User Role")]
+        public string UserRoles { get; set; }
     }
 
     public class ResetPasswordViewModel

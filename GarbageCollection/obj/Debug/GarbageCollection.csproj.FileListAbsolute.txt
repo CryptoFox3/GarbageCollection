@@ -120,3 +120,6 @@ C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollecti
 C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollection\GarbageCollection\obj\Debug\GarbageCollection.csproj.CopyComplete
 C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollection\GarbageCollection\obj\Debug\GarbageCollection.dll
 C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollection\GarbageCollection\obj\Debug\GarbageCollection.pdb
+C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollection\GarbageCollection\obj\Debug\GarbageCollection.Migrations.InitialCreate.resources
+C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollection\GarbageCollection\obj\Debug\GarbageCollection.csproj.GenerateResource.cache
+C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollection\GarbageCollection\obj\Debug\GarbageCollection.Migrations.RoleMigration.resources
