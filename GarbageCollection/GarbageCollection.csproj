@@ -196,6 +196,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerModelsController.cs" />
+    <Compile Include="Controllers\EmployeeModelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -208,6 +210,10 @@
     <Compile Include="Migrations\201807261954326_RoleMigration.cs" />
     <Compile Include="Migrations\201807261954326_RoleMigration.Designer.cs">
       <DependentUpon>201807261954326_RoleMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807271652364_customers.cs" />
+    <Compile Include="Migrations\201807271652364_customers.Designer.cs">
+      <DependentUpon>201807271652364_customers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -277,9 +283,22 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\CustomerModels\Create.cshtml" />
+    <Content Include="Views\CustomerModels\Delete.cshtml" />
+    <Content Include="Views\CustomerModels\Details.cshtml" />
+    <Content Include="Views\CustomerModels\Edit.cshtml" />
+    <Content Include="Views\CustomerModels\Index.cshtml" />
+    <Content Include="Views\EmployeeModels\Create.cshtml" />
+    <Content Include="Views\EmployeeModels\Delete.cshtml" />
+    <Content Include="Views\EmployeeModels\Details.cshtml" />
+    <Content Include="Views\EmployeeModels\Edit.cshtml" />
+    <Content Include="Views\EmployeeModels\Index.cshtml" />
+    <Content Include="Views\Shared\Customer_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Customer\" />
+    <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -300,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807261954326_RoleMigration.resx">
       <DependentUpon>201807261954326_RoleMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807271652364_customers.resx">
+      <DependentUpon>201807271652364_customers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

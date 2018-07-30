@@ -10,7 +10,7 @@ using GarbageCollection.Models;
 
 namespace GarbageCollection.Controllers
 {
-    [Authorize]
+    
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
