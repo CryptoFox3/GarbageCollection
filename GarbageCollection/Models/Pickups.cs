@@ -15,6 +15,7 @@ namespace GarbageCollection.Models
         public int Zipcode { get; set; }
         public bool Repeat { get; set; }
         public bool IsCompleted {get; set;}
+        public double PickupCost { get; set; }
         
     }
 }

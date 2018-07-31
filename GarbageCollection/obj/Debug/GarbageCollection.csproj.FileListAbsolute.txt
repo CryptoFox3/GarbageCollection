@@ -123,3 +123,4 @@ C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollecti
 C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollection\GarbageCollection\obj\Debug\GarbageCollection.Migrations.AddedusernametocustomerModels.resources
 C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollection\GarbageCollection\obj\Debug\GarbageCollection.csproj.GenerateResource.cache
 C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollection\GarbageCollection\obj\Debug\GarbageCollection.Migrations.Addedpickups.resources
+C:\Users\pghod\Desktop\DevCodeCamp\Assignments\GarbageCollection\GarbageCollection\GarbageCollection\obj\Debug\GarbageCollection.Migrations.Addedpickupsmodelcontrollerandviews.resources

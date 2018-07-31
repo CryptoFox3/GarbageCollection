@@ -10,7 +10,7 @@ using GarbageCollection.Models;
 
 namespace GarbageCollection.Controllers
 {
-    [Authorize(Roles = "Customer,Employee")]
+    [Authorize(Roles = "Customer,Employee,Admin")]
     public class CustomerModelsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -126,6 +126,14 @@ namespace GarbageCollection.Controllers
             var customer = db.Customers.Where(c => c.CustomersId.Equals(id)).First();
             return View(customer.AmountDue);
         }
+
+        [HttpPost, ActionName("MyPickups")]
+        public ActionResult DisplayMyPickups(int id)
+        {
+            var customer = db.Customers.Where(c => c.CustomersId.Equals(id)).First();
+            return View(customer);
+        }
+
 
         protected override void Dispose(bool disposing)
         {

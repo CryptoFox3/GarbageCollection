@@ -10,7 +10,7 @@ using GarbageCollection.Models;
 
 namespace GarbageCollection.Controllers
 {
-    [Authorize(Roles = "Employee")]
+    [Authorize(Roles = "Employee,Admin")]
     public class EmployeeModelsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -118,9 +118,7 @@ namespace GarbageCollection.Controllers
 
         //public ActionResult DisplayPickups(int Zipcode)
         //{
-        //    List<Pickups> pickups = new List<Pickups>();
-
-        //    pickups.Add(db.Pickups.Where(p => p.Zipcode.Equals(Zipcode));
+         
         //}
 
         protected override void Dispose(bool disposing)

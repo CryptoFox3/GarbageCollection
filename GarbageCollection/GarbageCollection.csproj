@@ -200,6 +200,7 @@
     <Compile Include="Controllers\EmployeeModelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PickupsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,6 +211,10 @@
     <Compile Include="Migrations\201807311308284_Added pickups.cs" />
     <Compile Include="Migrations\201807311308284_Added pickups.Designer.cs">
       <DependentUpon>201807311308284_Added pickups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807311844293_Added pickups model, controller and views..cs" />
+    <Compile Include="Migrations\201807311844293_Added pickups model, controller and views..Designer.cs">
+      <DependentUpon>201807311844293_Added pickups model, controller and views..cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -297,9 +302,13 @@
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\EmployeeModels\EmployeePortal.cshtml" />
-    <Content Include="Views\CustomerModels\MyPickups.cshtml" />
     <Content Include="Views\CustomerModels\Billing.cshtml" />
     <Content Include="Views\EmployeeModels\Pickups.cshtml" />
+    <Content Include="Views\Pickups\Create.cshtml" />
+    <Content Include="Views\Pickups\Delete.cshtml" />
+    <Content Include="Views\Pickups\Details.cshtml" />
+    <Content Include="Views\Pickups\Edit.cshtml" />
+    <Content Include="Views\Pickups\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -323,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807311308284_Added pickups.resx">
       <DependentUpon>201807311308284_Added pickups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807311844293_Added pickups model, controller and views..resx">
+      <DependentUpon>201807311844293_Added pickups model, controller and views..cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
