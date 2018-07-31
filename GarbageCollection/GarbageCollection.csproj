@@ -203,24 +203,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807261849321_InitialCreate.cs" />
-    <Compile Include="Migrations\201807261849321_InitialCreate.Designer.cs">
-      <DependentUpon>201807261849321_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201807301849019_Added username to customerModels.cs" />
+    <Compile Include="Migrations\201807301849019_Added username to customerModels.Designer.cs">
+      <DependentUpon>201807301849019_Added username to customerModels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807261954326_RoleMigration.cs" />
-    <Compile Include="Migrations\201807261954326_RoleMigration.Designer.cs">
-      <DependentUpon>201807261954326_RoleMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807271652364_customers.cs" />
-    <Compile Include="Migrations\201807271652364_customers.Designer.cs">
-      <DependentUpon>201807271652364_customers.cs</DependentUpon>
+    <Compile Include="Migrations\201807311308284_Added pickups.cs" />
+    <Compile Include="Migrations\201807311308284_Added pickups.Designer.cs">
+      <DependentUpon>201807311308284_Added pickups.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Addresses.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerModels.cs" />
     <Compile Include="Models\EmployeeModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Pickups.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -283,22 +282,27 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\CustomerModels\Create.cshtml" />
-    <Content Include="Views\CustomerModels\Delete.cshtml" />
-    <Content Include="Views\CustomerModels\Details.cshtml" />
-    <Content Include="Views\CustomerModels\Edit.cshtml" />
-    <Content Include="Views\CustomerModels\Index.cshtml" />
+    <Content Include="Views\Shared\Customer_Layout.cshtml" />
+    <Content Include="Views\Shared\Employee_Layout.cshtml" />
     <Content Include="Views\EmployeeModels\Create.cshtml" />
     <Content Include="Views\EmployeeModels\Delete.cshtml" />
     <Content Include="Views\EmployeeModels\Details.cshtml" />
     <Content Include="Views\EmployeeModels\Edit.cshtml" />
     <Content Include="Views\EmployeeModels\Index.cshtml" />
-    <Content Include="Views\Shared\Customer_Layout.cshtml" />
+    <Content Include="Views\CustomerModels\Create.cshtml" />
+    <Content Include="Views\CustomerModels\Delete.cshtml" />
+    <Content Include="Views\CustomerModels\Details.cshtml" />
+    <Content Include="Views\CustomerModels\Edit.cshtml" />
+    <Content Include="Views\CustomerModels\Index.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\EmployeeModels\EmployeePortal.cshtml" />
+    <Content Include="Views\CustomerModels\MyPickups.cshtml" />
+    <Content Include="Views\CustomerModels\Billing.cshtml" />
+    <Content Include="Views\EmployeeModels\Pickups.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Customer\" />
-    <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -314,14 +318,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807261849321_InitialCreate.resx">
-      <DependentUpon>201807261849321_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807301849019_Added username to customerModels.resx">
+      <DependentUpon>201807301849019_Added username to customerModels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807261954326_RoleMigration.resx">
-      <DependentUpon>201807261954326_RoleMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807271652364_customers.resx">
-      <DependentUpon>201807271652364_customers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807311308284_Added pickups.resx">
+      <DependentUpon>201807311308284_Added pickups.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,7 +10,6 @@ namespace GarbageCollection.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "GarbageCollection.Models.ApplicationDbContext";
         }
 
         protected override void Seed(GarbageCollection.Models.ApplicationDbContext context)

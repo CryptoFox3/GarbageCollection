@@ -9,11 +9,11 @@ namespace GarbageCollection.Models
     public class EmployeeModels
     {
         [Key]
-        public int EmployeeId { get; set; }
         public int UserId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public int EmployeeId { get; set; }
+        public string Username { get; set; }
         public string Email { get; set; }
-        public int ZipCode { get; set; }
+        public int Zipcode { get; set; }
+
     }
 }

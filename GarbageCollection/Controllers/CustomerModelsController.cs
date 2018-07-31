@@ -10,7 +10,7 @@ using GarbageCollection.Models;
 
 namespace GarbageCollection.Controllers
 {
-    [Authorize(Roles = "Customers")]
+    [Authorize(Roles = "Customer,Employee")]
     public class CustomerModelsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,11 +18,16 @@ namespace GarbageCollection.Controllers
         // GET: CustomerModels
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            return View(db.Customers.ToList());
         }
+        //public ActionResult IndexOne()
+        //{
+        // //   var customer = db.Users.
+        //  //  return View(customer);
+        //}
 
         // GET: CustomerModels/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -47,11 +52,11 @@ namespace GarbageCollection.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName,CustomersId,UserId,FirstName,LastName,Address,ZipCode,AmountDue,PickupDate")] CustomerModels customerModels)
+        public ActionResult Create([Bind(Include = "CustomersId,UserId,Username,FirstName,LastName,Email,Address,ZipCode,AmountDue,PickupDate")] CustomerModels customerModels)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(customerModels);
+                db.Customers.Add(customerModels);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -60,7 +65,7 @@ namespace GarbageCollection.Controllers
         }
 
         // GET: CustomerModels/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -79,7 +84,7 @@ namespace GarbageCollection.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName,CustomersId,UserId,FirstName,LastName,Address,ZipCode,AmountDue,PickupDate")] CustomerModels customerModels)
+        public ActionResult Edit([Bind(Include = "CustomersId,UserId,Username,FirstName,LastName,Email,Address,ZipCode,AmountDue,PickupDate")] CustomerModels customerModels)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +96,7 @@ namespace GarbageCollection.Controllers
         }
 
         // GET: CustomerModels/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -108,12 +113,18 @@ namespace GarbageCollection.Controllers
         // POST: CustomerModels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             CustomerModels customerModels = db.Customers.Find(id);
-            db.Users.Remove(customerModels);
+            db.Customers.Remove(customerModels);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        [HttpPost, ActionName("Billing")]
+        public ActionResult DisplayAmountDue(int id)
+        {
+            var customer = db.Customers.Where(c => c.CustomersId.Equals(id)).First();
+            return View(customer.AmountDue);
         }
 
         protected override void Dispose(bool disposing)

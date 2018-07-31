@@ -10,7 +10,7 @@ using GarbageCollection.Models;
 
 namespace GarbageCollection.Controllers
 {
-    [Authorize(Roles ="Employees")]
+    [Authorize(Roles = "Employee")]
     public class EmployeeModelsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -47,7 +47,7 @@ namespace GarbageCollection.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeId,UserId,FirstName,LastName,Email,ZipCode")] EmployeeModels employeeModels)
+        public ActionResult Create([Bind(Include = "UserId,EmployeeId,Username,Email,Zipcode")] EmployeeModels employeeModels)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace GarbageCollection.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeId,UserId,FirstName,LastName,Email,ZipCode")] EmployeeModels employeeModels)
+        public ActionResult Edit([Bind(Include = "UserId,EmployeeId,Username,Email,Zipcode")] EmployeeModels employeeModels)
         {
             if (ModelState.IsValid)
             {
@@ -115,6 +115,13 @@ namespace GarbageCollection.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        //public ActionResult DisplayPickups(int Zipcode)
+        //{
+        //    List<Pickups> pickups = new List<Pickups>();
+
+        //    pickups.Add(db.Pickups.Where(p => p.Zipcode.Equals(Zipcode));
+        //}
 
         protected override void Dispose(bool disposing)
         {
