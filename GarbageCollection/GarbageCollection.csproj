@@ -204,17 +204,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807301849019_Added username to customerModels.cs" />
-    <Compile Include="Migrations\201807301849019_Added username to customerModels.Designer.cs">
-      <DependentUpon>201807301849019_Added username to customerModels.cs</DependentUpon>
+    <Compile Include="Migrations\201808012006550_Initial.cs" />
+    <Compile Include="Migrations\201808012006550_Initial.Designer.cs">
+      <DependentUpon>201808012006550_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807311308284_Added pickups.cs" />
-    <Compile Include="Migrations\201807311308284_Added pickups.Designer.cs">
-      <DependentUpon>201807311308284_Added pickups.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807311844293_Added pickups model, controller and views..cs" />
-    <Compile Include="Migrations\201807311844293_Added pickups model, controller and views..Designer.cs">
-      <DependentUpon>201807311844293_Added pickups model, controller and views..cs</DependentUpon>
+    <Compile Include="Migrations\201808020536589_ChangedAmountDueFromIntToDouble.cs" />
+    <Compile Include="Migrations\201808020536589_ChangedAmountDueFromIntToDouble.Designer.cs">
+      <DependentUpon>201808020536589_ChangedAmountDueFromIntToDouble.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -309,6 +305,9 @@
     <Content Include="Views\Pickups\Details.cshtml" />
     <Content Include="Views\Pickups\Edit.cshtml" />
     <Content Include="Views\Pickups\Index.cshtml" />
+    <Content Include="Views\Pickups\IndexPickupsByZip.cshtml" />
+    <Content Include="Views\Pickups\ConfirmPickup.cshtml" />
+    <Content Include="Views\Shared\Admin_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,14 +326,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807301849019_Added username to customerModels.resx">
-      <DependentUpon>201807301849019_Added username to customerModels.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808012006550_Initial.resx">
+      <DependentUpon>201808012006550_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807311308284_Added pickups.resx">
-      <DependentUpon>201807311308284_Added pickups.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807311844293_Added pickups model, controller and views..resx">
-      <DependentUpon>201807311844293_Added pickups model, controller and views..cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808020536589_ChangedAmountDueFromIntToDouble.resx">
+      <DependentUpon>201808020536589_ChangedAmountDueFromIntToDouble.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

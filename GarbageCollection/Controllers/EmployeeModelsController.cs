@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GarbageCollection.Models;
+using Microsoft.AspNet.Identity;
 
 namespace GarbageCollection.Controllers
 {
@@ -47,10 +48,11 @@ namespace GarbageCollection.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserId,EmployeeId,Username,Email,Zipcode")] EmployeeModels employeeModels)
+        public ActionResult Create([Bind(Include = "UserId,Username,Email,Zipcode")] EmployeeModels employeeModels)
         {
             if (ModelState.IsValid)
             {
+                employeeModels.ApplicationUserId = User.Identity.GetUserId();
                 db.Employees.Add(employeeModels);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -116,9 +118,10 @@ namespace GarbageCollection.Controllers
             return RedirectToAction("Index");
         }
 
+        
         //public ActionResult DisplayPickups(int Zipcode)
         //{
-         
+
         //}
 
         protected override void Dispose(bool disposing)

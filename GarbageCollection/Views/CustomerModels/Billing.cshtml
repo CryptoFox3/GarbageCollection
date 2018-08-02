@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<GarbageCollection.Models.CustomerModels>
 @{
     ViewBag.Title = "Billing";
 }
@@ -8,9 +8,8 @@
     <title></title>
 </head>
 <body>
-<h2>Billing</h2>
-<h4>
-  @*  <dt></dt>@Html.DisplayFor(model => model.AmountDue)*@</h4>
+    <h2>Billing</h2>
+    <p>Your amount due is: @Html.DisplayFor(model => model.AmountDue)</p>
 
 </body>
 </html>

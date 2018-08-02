@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GarbageCollection.Models;
+using Microsoft.AspNet.Identity;
 
 namespace GarbageCollection.Controllers
 {
@@ -18,6 +19,25 @@ namespace GarbageCollection.Controllers
         public ActionResult Index()
         {
             return View(db.Pickups.ToList());
+        }
+
+        public ActionResult IndexPickupsByZip()
+        {
+            var userId = User.Identity.GetUserId();
+            var Employee = db.Employees.Where(e => e.ApplicationUserId.Equals(userId)).First();
+            var pickups = db.Pickups.Where(p => p.Zipcode == Employee.Zipcode).ToList();
+            return View(pickups);
+        }
+
+        public ActionResult ConfirmPickup(int? Id)
+        {
+            var pickup = db.Pickups.Where(p => p.PickupId == Id).First();
+            return View(pickup);
+        }
+        [HttpPost, ActionName("ConfirmPickup")]
+        public ActionResult PickupConfirmed(int? Id)
+        {
+            return RedirectToAction("IndexPickupsByZip");
         }
 
         // GET: Pickups/Details/5

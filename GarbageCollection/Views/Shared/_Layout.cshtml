@@ -27,6 +27,12 @@
                     <li>@Html.ActionLink("Employee Portal", "Index", "EmployeeModels")</li>
                     <li>@Html.ActionLink("Customer Portal", "Index", "CustomerModels")</li>
                     <li>@Html.ActionLink("Pickups", "Index", "Pickups")</li>
+                    <li>@if (User.IsInRole("Employee"))
+                    {
+                        Html.ActionLink("Pickups", "Index", "Pickups");
+                    }   
+                            </li>
+	
 
                 </ul>
                 @Html.Partial("_LoginPartial")

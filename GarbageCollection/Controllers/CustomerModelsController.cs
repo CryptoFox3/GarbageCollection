@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GarbageCollection.Models;
+using Microsoft.AspNet.Identity;
 
 namespace GarbageCollection.Controllers
 {
@@ -56,6 +57,7 @@ namespace GarbageCollection.Controllers
         {
             if (ModelState.IsValid)
             {
+                customerModels.ApplicationUserId = User.Identity.GetUserId();
                 db.Customers.Add(customerModels);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -77,6 +79,12 @@ namespace GarbageCollection.Controllers
                 return HttpNotFound();
             }
             return View(customerModels);
+        }
+
+        public ActionResult Billing(int? id)
+        {
+            var customer = db.Customers.Find(id);
+            return View(customer.AmountDue);
         }
 
         // POST: CustomerModels/Edit/5
@@ -124,7 +132,7 @@ namespace GarbageCollection.Controllers
         public ActionResult DisplayAmountDue(int id)
         {
             var customer = db.Customers.Where(c => c.CustomersId.Equals(id)).First();
-            return View(customer.AmountDue);
+            return View(customer);
         }
 
         [HttpPost, ActionName("MyPickups")]
