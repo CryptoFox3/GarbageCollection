@@ -21,6 +21,11 @@ namespace GarbageCollection.Controllers
         {
             return View(db.Customers.ToList());
         }
+
+        public ActionResult CustomerPortal()
+        {
+            return View(db.Customers.ToList());
+        }
         //public ActionResult IndexOne()
         //{
         // //   var customer = db.Users.
